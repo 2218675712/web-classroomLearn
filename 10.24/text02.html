@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+     * 时间：  2019年10月24日11:46:02
+     *目的：   计算用户折扣后价格
+     */
+
+
+    /*
+    * 商店中，如果是商店会员可以享受打折优惠，非会员没有优惠。
+    *提示：
+    *1.会员请输入1，非会员请输入0
+    *2.请输入购物价格
+    *3.如果价格大于等于300元 会员打八折，大于等于100元 会员打九折
+    *4.并且计算打折后应付金额
+    *
+    * */
+
+    //获取会员状态、购物价格，并转换为数字格式
+    var member = Number(prompt("会员输入1，非会员输入0(数字格式)"));
+    var price = Number(prompt("请输入购物价格(数字格式)"));
+    if (member === 1) {
+        if (price >= 100) {
+            alert("应付金额" + price * 0.9);
+        } else if (price >= 300) {
+            alert("应付金额" + price * 0.8);
+        } else {
+            alert("请输入正确的购物价格");
+        }
+    } else if (member === 0) {
+        alert("应付金额" + price);
+    } else {
+        alert("请输入阿拉伯数字");
+    }
+</script>
+</body>
+</html>

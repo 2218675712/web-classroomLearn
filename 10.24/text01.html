@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" placeholder="请输入月份" id="txt">
+<input type="button" value="请输入内容" id="btn">
+<script>
+    /**
+     * 时间:  2019年10月24日11:45:08
+     * 目的:  输入月份
+     */
+    document.getElementById("btn").onclick = function () {
+        var month = document.getElementById("txt").value;
+        month=Number(month);
+        if (month >= 3 && month <= 5) {
+            alert("春季");
+        } else if (month >= 6 && month <= 8) {
+            alert("夏季");
+        } else if (month >= 9 && month <= 11) {
+            alert("秋季");
+        } else {
+            (month === 12 || (month<=2&&month>=1))?alert("冬季"):alert("请输入正确的内容");
+        }
+    };
+
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        * 时间:   2019年11月5日16:12:54
+        * 目的：   改良银行
+        *
+        *
+        * */
+    </script>
+</head>
+<body>
+<div id="error" style="width: 150px;height:30px; border: 1px solid red;display: none;"></div>
+<input type="text" placeholder="请输入账号" id="txtName"><br>
+<input type="text" placeholder="请输入密码" id="txtPwd"><br>
+<input type="button" onclick="btnLogin()" value="登录">
+<script>
+    function btnLogin() {
+
+        var name = document.getElementById("txtName").value;
+        var pwd = document.getElementById("txtPwd").value;
+
+        if (name != "") {
+
+
+            //密码判断
+            if (pwd == "123456") {
+                document.write("登录成功");
+            } else {
+
+                //密码错误
+                //错误框显示
+                document.getElementById("error").style.display = "block";
+                //显示内容
+                document.getElementById("error").innerHTML = "<strong style='color: red;'>密码输入错误</strong>";
+            }
+        } else {
+            //错误框显示
+            document.getElementById("error").style.display = "block";
+            //显示内容
+            document.getElementById("error").innerHTML = "<strong style='color: red;'>账号不为空</strong>";
+        }
+
+
+    }
+</script>
+</body>
+</html>

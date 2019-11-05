@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        * 时间:   2019年11月5日17:14:20
+        * 目的：   获取输入,字符串拼接输出
+        *
+        *
+        * */
+    </script>
+</head>
+<body>
+<input type="text " placeholder="名字" id="txtName">
+<div style="width: 180px;height: 50px;background:skyblue;" id="dv"></div>
+<button id="btn">提交</button>
+<script>
+    document.getElementById("btn").onclick = function () {
+        var name = document.getElementById("txtName");
+        var dv = document.getElementById("dv");
+        dv.innerText = name.value + "是17编程1班学生,爱好唱、跳、rap";
+    }
+</script>
+</body>
+</html>

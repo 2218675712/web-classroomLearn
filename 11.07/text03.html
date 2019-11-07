@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="txt1" placeholder="数字1"><br>
+<input type="text" id="txt2" placeholder="数字2"><br>
+<input type="text" id="txt3" placeholder="数字3"><br>
+<input type="button" id="btn" value="计算最大值"><br>
+<div id="dv" style="width: 100px;height: 50px;border: 1px solid red;display: none;"></div>
+<script>
+
+    var btn = document.getElementById("btn");
+
+    btn.onclick = function () {
+        var txt1 = Number(document.getElementById("txt1").value);
+        var txt2 = Number(document.getElementById("txt2").value);
+        var txt3 = Number(document.getElementById("txt3").value);
+        var dv = document.getElementById("dv");
+        var max = txt1;
+        if (max < txt2) {
+            max = txt2;
+        } else if (max < txt3) {
+            max = txt3;
+        }
+        dv.style.display = "block";
+        dv.innerText = max;
+    } /
+</script>
+</body>
+</html>

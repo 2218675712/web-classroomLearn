@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        * 时间:   2019年11月7日11:23:34
+        * 目的:   账号为空,密码不让输
+        *
+        *
+        * */
+    </script>
+</head>
+<body>
+
+
+<input type="text" id="txtName" placeholder="请输入账号" >
+<span id="div1" style="color: red; display: none;">请输入账号</span>
+<br>
+<input type="text" id="txtPwd" placeholder="请输入密码">
+<br>
+<input type="button" id="tiJiao" value="提交">
+
+
+<script>
+
+    //通过id获取标签
+    var name1 = document.getElementById("txtPwd").value;
+    var pwd = document.getElementById("txtPwd");
+    var div1 = document.getElementById("div1");
+    var tiJiao = document.getElementById("tiJiao");
+
+    //点击进行判断,如果文本框为空,那么不让输入密码
+    name1.onblur=function () {
+        var nameBlur = document.getElementById("txtName").value;
+        //判断密码是否为空
+        if (nameBlur != "") {//不为空
+            pwd.disabled = false;
+        } else {//空
+            div1.style.display = "inline";
+            pwd.disabled = true;
+            document.getElementById("txtName").focus();
+        }
+    }
+
+</script>
+</body>
+</html>

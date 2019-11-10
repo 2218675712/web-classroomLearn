@@ -15,7 +15,7 @@
 <body>
 
 
-<input type="text" id="txtName" placeholder="请输入账号" >
+<input type="text" id="txtName" placeholder="请输入账号">
 <span id="div1" style="color: red; display: none;">请输入账号</span>
 <br>
 <input type="text" id="txtPwd" placeholder="请输入密码">
@@ -26,22 +26,28 @@
 <script>
 
     //通过id获取标签
-    var name1 = document.getElementById("txtPwd").value;
+    var name1 = document.getElementById("txtName");
     var pwd = document.getElementById("txtPwd");
     var div1 = document.getElementById("div1");
     var tiJiao = document.getElementById("tiJiao");
 
     //点击进行判断,如果文本框为空,那么不让输入密码
-    name1.onblur=function () {
+    name1.onblur = function () {
+
+
         var nameBlur = document.getElementById("txtName").value;
+
+
         //判断密码是否为空
         if (nameBlur != "") {//不为空
             pwd.disabled = false;
+            div1.style.display = "none";
         } else {//空
             div1.style.display = "inline";
             pwd.disabled = true;
             document.getElementById("txtName").focus();
         }
+
     }
 
 </script>

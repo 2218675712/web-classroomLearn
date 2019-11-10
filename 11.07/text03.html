@@ -11,23 +11,31 @@
 <input type="button" id="btn" value="计算最大值"><br>
 <div id="dv" style="width: 100px;height: 50px;border: 1px solid red;display: none;"></div>
 <script>
-
+    //获取按钮
     var btn = document.getElementById("btn");
 
+    //定义按钮点击事件
     btn.onclick = function () {
+
+        //获取三个文本框的值,保存到变量
         var txt1 = Number(document.getElementById("txt1").value);
         var txt2 = Number(document.getElementById("txt2").value);
         var txt3 = Number(document.getElementById("txt3").value);
         var dv = document.getElementById("dv");
-        var max = txt1;
-        if (max < txt2) {
+        var max = Math.max(txt1,txt2,txt3);
+        // var max = txt1;
+
+        //进行比较判断
+       /* if (max < txt2) {
             max = txt2;
         } else if (max < txt3) {
             max = txt3;
-        }
+        }*/
+
+
         dv.style.display = "block";
         dv.innerText = max;
-    } /
+    }
 </script>
 </body>
 </html>

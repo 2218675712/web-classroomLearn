@@ -19,6 +19,8 @@
 <span id="div1" style="color: red; display: none;">请输入账号</span>
 <br>
 <input type="text" id="txtPwd" placeholder="请输入密码">
+<span id="div2" style="color: red; display: none;">请输入密码</span>
+
 <br>
 <input type="button" id="tiJiao" value="提交">
 
@@ -29,25 +31,40 @@
     var name1 = document.getElementById("txtName");
     var pwd = document.getElementById("txtPwd");
     var div1 = document.getElementById("div1");
+    var div2 = document.getElementById("div2");
     var tiJiao = document.getElementById("tiJiao");
 
     //点击进行判断,如果文本框为空,那么不让输入密码
     name1.onblur = function () {
 
-
         var nameBlur = document.getElementById("txtName").value;
 
-
-        //判断密码是否为空
-        if (nameBlur != "") {//不为空
+        //判断账号是否为空
+        if (nameBlur !== "") {//不为空
             pwd.disabled = false;
             div1.style.display = "none";
+
         } else {//空
             div1.style.display = "inline";
             pwd.disabled = true;
             document.getElementById("txtName").focus();
         }
 
+
+    };
+
+    //密码判断
+    pwd.onblur = function () {
+
+        var pwdBlur = document.getElementById("txtPwd").value;
+
+
+        //密码
+        if (pwdBlur != "") {
+            div2.style.display = "none";
+        } else {
+            div2.style.display = "inline";
+        }
     }
 
 </script>

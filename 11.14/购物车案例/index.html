@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <style>
+        .shopping {
+            width: 600px;
+            height: 300px;
+            border: 1px solid red;
+            margin: 180px auto;
+        }
+
+        .shopping caption {
+            background-color: skyblue;
+            height: 60px;
+            line-height: 60px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+
+<table class="shopping">
+    <!--    onchange        改变事件-->
+    <caption>购物车</caption>
+    <thead>
+    <tr>
+        <th>全选</th>
+        <th>商品名称</th>
+        <th>件数</th>
+        <th>金额</th>
+    </tr>
+    <tr>
+        <th><input type="checkbox" id="checkAll"></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><input type="checkbox" name="check"></td>
+        <td>巧克力</td>
+        <td><input type="text" placeholder="请输入购买件数" name="count"></td>
+        <td><span price="40">￥40</span></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="check"></td>
+        <td>牛奶</td>
+        <td><input type="text" placeholder="请输入购买件数" name="count"></td>
+        <td><span price="30">￥30</span></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="check"></td>
+        <td>苹果</td>
+        <td><input type="text" placeholder="请输入购买件数" name="count"></td>
+        <td><span price="15">￥15</span></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><span id="payment">0</span></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td colspan="2" id="resultsShow">购买了<span id="totalNumber">0</span>件商品,总金额<span id="totalMoney"></span>元</td>
+        <td><em></em></td>
+        <td><input type="button" value="结算" id="clearing"></td>
+    </tr>
+    </tbody>
+
+</table>
+
+
+<script>
+    //总金额,件数函数
+    function f1() {
+        totalMoney = 0;
+        totalNumber = 0;
+        for (var d = 0; d < check.length; d++) {
+            if (check[d].checked) {
+                //各类商品总金额
+                tempMoney = (Number(count[d].value)) * (Number(price[d].getAttribute("price")));
+                totalMoney += tempMoney;
+                totalNumber += Number(count[d].value);
+            }
+        }
+        document.getElementById("payment").innerText = totalMoney;
+        document.getElementById("totalNumber").innerText = totalNumber;
+        document.getElementById("totalMoney").innerText = totalMoney;
+    }
+
+
+    //获取所有的商品的多选框
+    var check = document.getElementsByName("check");
+    //获取全选按钮
+    var checkAll = document.getElementById("checkAll");
+    //单件商品金额
+    var price = document.getElementsByTagName("span");
+    //获取件数
+    var count = document.getElementsByName("count");
+    //各类商品总金额
+    var tempMoney;
+    //总金额
+    var totalMoney = 0;
+    //总件数
+    var totalNumber = 0;
+    //结算事件
+    var clearing = document.getElementById("clearing");
+
+
+    //当点击全选按钮时,实现全选
+    checkAll.oninput = function () {
+        for (var a = 0; a < check.length; a++) {
+            check[a].checked = this.checked;
+        }
+        f1()
+    };
+    //如果下面所有的多选框被选中,那么上面的全选框也会被选中
+    for (var b = 0; b < check.length; b++) {
+        //获取tbody中所有的复选框,分别注册点击事件
+        check[b].oninput = function () {
+            f1();
+            //默认都被选中了
+            var flag = true;
+            //判断是否所有的复选框都选中
+            for (var c = 0; c < check.length; c++) {
+                if (!check[c].checked) {
+                    //没选中就进来了
+                    flag = false;
+                    break;
+                }
+            }
+            //全选的这个复选框的状态就是flag这个变量的值
+            checkAll.checked = flag;
+        }
+    }
+
+    // 失去焦点,执行f1
+    for (var e = 0; e < count.length; e++) {
+        count[e].oninput = function () {
+            f1();
+        };
+
+    }
+
+</script>
+</body>
+</html>

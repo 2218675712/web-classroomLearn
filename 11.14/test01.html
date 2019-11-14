@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <!--    从数据库String值,给复选框进行选择-->
 </head>
 <body>
+
+
 <h2>爱好</h2>
 <input type="checkbox" name="hobby" value="1">打游戏
 <input type="checkbox" name="hobby" value="2">刷抖音
@@ -13,28 +14,17 @@
 <input type="checkbox" name="hobby" value="4">听音乐
 <input type="checkbox" name="hobby" value="5">看知乎
 <input type="checkbox" name="hobby" value="6">逛B站<br>
-<input type="button" id="btn" value="小明的爱好">
+<input type="button" id="btn" value="全选/反选">
+
 <script>
-
-    //点击事件
     document.getElementById("btn").onclick = function () {
-
-        //从后台传来数据
-        var str = "1,2,4,6";
-
-        //获取所有的多选框
         var hobby = document.getElementsByName("hobby");
-
-        //遍历爱好
         for (var i = 0; i < hobby.length; i++) {
+            if (hobby[i].checked) {
+                hobby[i].checked = false;
+            } else {
+                hobby[i].checked = true;
 
-            //遍历从后台获取的数据
-            for (var j = 0; j < str.length; j++) {
-
-                //如果爱好标签的value等于后台数据的值,那么设置为选中状态
-                if (hobby[i].value === str[j]) {
-                    hobby[i].checked = true;
-                }
             }
         }
     }

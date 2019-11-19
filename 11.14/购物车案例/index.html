@@ -66,7 +66,7 @@
     </tr>
     <tr>
         <td></td>
-        <td colspan="2" id="resultsShow">购买了<span id="totalNumber">0</span>件商品,总金额<span id="totalMoney"></span>元</td>
+        <td colspan="2" id="resultsShow">购买了<span id="totalNumber">0</span>件商品,总金额<span id="totalMoney">0</span>元</td>
         <td><em></em></td>
         <td><input type="button" value="结算" id="clearing"></td>
     </tr>
@@ -117,7 +117,7 @@
         for (var a = 0; a < check.length; a++) {
             check[a].checked = this.checked;
         }
-        f1()
+        f1();
     };
     //如果下面所有的多选框被选中,那么上面的全选框也会被选中
     for (var b = 0; b < check.length; b++) {

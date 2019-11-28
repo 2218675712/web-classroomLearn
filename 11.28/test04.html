@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        .bg-blue {
+            background-color: blue;
+        }
+
+        .cl-white {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<h1>新手指南</h1>
+<ul>
+    <li><a href="#">会员注册</a></li>
+    <li><a href="#">订阅更新</a></li>
+    <li><a href="#">用户协议</a></li>
+    <li><a href="#">常见问题</a></li>
+</ul>
+<script>
+    $("h1").click(function () {
+        $("li").first().addClass('bg-blue');
+        $("li").first().children().addClass('cl-white')
+    })
+</script>
+</body>
+</html>

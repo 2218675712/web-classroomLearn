@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.4.1.js"></script>
+</head>
+<body>
+<h1>如何使用叮当网购物</h1>
+<ul style="display: none">
+    <li>方法一:注册成为网站会员</li>
+    <li>方法二:使用合作账号登录,如新浪微博,QQ,人人网账户</li>
+</ul>
+<script>
+    $("h1").click(function () {
+        $(this).css("backgroundColor", "red");
+        $("ul").css("display","none");
+    });
+</script>
+</body>
+</html>

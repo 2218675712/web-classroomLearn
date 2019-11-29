@@ -5,6 +5,12 @@
     <title>Title</title>
     <script src="../jquery-3.4.1.js"></script>
     <style>
+        div {
+            width: 300px;
+            padding: 20px 0;
+            border: 1px solid #dddddd;
+        }
+
         .bg-blue {
             background-color: blue;
         }
@@ -15,18 +21,22 @@
     </style>
 </head>
 <body>
-<h1>新手指南</h1>
-<ul>
-    <li><a href="#">会员注册</a></li>
-    <li><a href="#">订阅更新</a></li>
-    <li><a href="#">用户协议</a></li>
-    <li><a href="#">常见问题</a></li>
-</ul>
+<div>
+    <h1>新手指南</h1>
+    <ul style="display: none">
+        <li><a href="#">会员注册</a></li>
+        <li><a href="#">订阅更新</a></li>
+        <li><a href="#">用户协议</a></li>
+        <li><a href="#">常见问题</a></li>
+    </ul>
+</div>
+
 <script>
     $("h1").click(function () {
+        $("ul").css("display", "block");
         $("li").first().addClass('bg-blue');
-        $("li").first().children().addClass('cl-white')
-    })
+        $("li").first().children().addClass('cl-white');
+    });
 </script>
 </body>
 </html>

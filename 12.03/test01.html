@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script>
+        /*
+        * 时间:2019年12月3日16:25:24
+        * 目的:jquery选择器
+        *要求：点击“热门排行”实现下述内容<br>
+        *1.获取并设置所有h2、dt、class为title的元素的背景颜色
+        *；设置背景颜色为黄色<br/>
+        *2.获取并设置所有class为title的h2元素的背景颜色<br/>
+        *3.改变所有元素的字体颜色
+        *
+        * */
+    </script>
+    <style type="text/css">
+        #box {
+            background-color: #FFF;
+            border: 2px solid #000;
+            padding: 5px;
+        }
+    </style>
+    <script src="../jquery-3.4.1.js"></script>
+</head>
+
+<body>
+<div id="box"> id为box的div
+    <h2 class="title">class为title的h2</h2>
+    <h3 class="title">class为title的h3</h3>
+    <h3>热门排行</h3>
+    <dl>
+        <dt><img src="img/case_1.gif" width="93" height="99" alt="斗地主"/></dt>
+        <dd class="title">斗地主</dd>
+        <dd>休闲游戏</dd>
+        <dd>QQ斗地主是国内同时在线人数最多的棋牌游戏......</dd>
+    </dl>
+</div>
+<script>
+    $(function () {
+        $("h3").click(function () {
+            $("h2,dt,.title").css("backgroundColor", "yellow");
+            $("h2.title").css("backgroundColor", "red");
+            $("*").css("color", "pink");
+        });
+    });
+</script>
+</body>
+
+</html>

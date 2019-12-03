@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            line-height: 30px;
+        }
+
+        body {
+            margin: 10px;
+        }
+
+        #menu {
+            border: 2px solid #03C;
+            padding: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            margin-right: 5px;
+        }
+
+        span {
+            font-weight: bold;
+            padding: 3px;
+        }
+
+        h2 {
+            margin: 10px 0;
+        }
+    </style>
+    <script src="../jquery-3.4.1.js"></script>
+</head>
+<body>
+<div id="menu">
+    <h2>全部旅游产品分类</h2>
+    <dl>
+        <dt>北京周边旅游<span>特价</span></dt>
+        <dd><a href="#">按天数</a> <a href="#">海边旅游</a> <a href="#">草原</a></dd>
+    </dl>
+    <dl>
+        <dt>景点门票</dt>
+        <dd><a href="#">名胜</a> <a href="#">暑期</a> <a href="#">乐园</a></dd>
+        <dd><a href="#">山水</a> <a href="#">双休</a></dd>
+    </dl>
+    <span>更多分类</span>
+</div>
+<script>
+    /*
+  *点击h2标题标签改变下述内容<br/>
+  *1.后代选择器，获取并设置#menu下的span元素的背景颜色为蓝色<br/>
+  *2.子选择器，获取并设置#menu下的子元素span的背景颜色为黄色<br/>
+  *3.相邻选择器，获取并设置紧接在h2元素后的dl元素的背景颜色为绿色<br/>
+  *4.同辈选择器，获取并设置h2元素之后的所有同辈元素dl的背景颜色为红色
+ */
+
+    $(function () {
+        $("h2").click(function () {
+            $("#menu span").css("backgroundColor", "blue");
+            $("#menu>span").css("backgroundColor", "yellow");
+            $("h2~dl").css("backgroundColor", "red");
+            $("h2+dl").css("backgroundColor", "green");
+        });
+    });
+</script>
+</body>
+</html>

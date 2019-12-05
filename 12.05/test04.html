@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>使用jQuery美化近期热门栏目并制作特效 </title>
+    <script src="../jquery-3.4.1.js"></script>
+</head>
+<body>
+<img src="images/图片2.png"/>
+<h3>乐淘，发现更多生活，快乐就在你身边...</h3>
+<h4>近期热门......<a href='#' class='more'>（更多）</a></h4>
+<table width="800" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td>语言之庭</td>
+    </tr>
+    <tr>
+        <td>斯托克</td>
+    </tr>
+    <tr>
+        <td>迷醉</td>
+    </tr>
+    <tr>
+        <td>巨人携手皆可</td>
+    </tr>
+    <tr>
+        <td>副作用</td>
+    </tr>
+    <tr>
+        <td>血肉之躯</td>
+    </tr>
+    <tr>
+        <td>7号房的礼物</td>
+    </tr>
+    <tr>
+        <td>惊声笑</td>
+    </tr>
+</table>
+<a href='#' class='more'>更多排名</a>
+<script>
+
+    /*
+
+     单击“更多”和“更多排名”均能显示隐藏的列表内容
+
+     * */
+
+
+</script>
+<script>
+    $(function () {
+        $("td:even").css("backgroundColor", "#ddd");
+        $("td:contains('迷醉')").css("backgroundColor", "skyblue");
+        $("td:gt(4)").hide();
+        $("a[class='more']").click(function () {
+            $("td").show();
+        });
+
+    });
+</script>
+</body>
+</html>

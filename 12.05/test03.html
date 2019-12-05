@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery基本过滤选择器示例</title>
+    <script type="text/javascript">
+
+        //改变第1个<li>元素的背景颜色
+        //改变最后一个<li>元素的背景颜色
+        //改变class不为three的<li>元素的背景颜色
+        //改变索引值为偶数的<li>元素的背景颜色
+        //改变索引值为奇数的<li>元素的背景颜色
+        //改变索引值等于1的<li>元素的背景颜色
+        //改变索引值大于1的<li>元素的背景颜色
+        //改变索引值小于1的<li>元素的背景颜色
+        //改变所有标题元素，例如<h1>,<h2>,<h3>……这些元素的背景颜色
+        //改变当前获取焦点的元素的背景颜色
+
+
+    </script>
+    <script src="../jquery-3.4.1.js"></script>
+</head>
+<body>
+<h2>网络小说</h2>
+<ul>
+    <li>王妃不好当</li>
+    <li>致命交易</li>
+    <li class="three">迦兰寺</li>
+    <li>逆天之宠</li>
+    <li>交错时光的爱恋</li>
+    <li>张震鬼故事</li>
+    <li>第一次亲密接触</li>
+</ul>
+<script>
+    $(function () {
+        $("ul li:first").css("backgroundColor", "pink");
+        $("ul li:last").css("backgroundColor", "skyblue");
+        $("ul li:not(.three)").css("backgroundColor", "purple");
+        $("ul li:even").css("backgroundColor", "yellow");
+        $("ul li:odd").css("backgroundColor", "red");
+        $("ul li:eq(1)").css("backgroundColor", "pink");
+        $("ul li:gt(1)").css("backgroundColor", "skyblue");
+        $("ul li:lt(1)").css("backgroundColor", "purple");
+        $(":header").css("backgroundColor", "yellow");
+        $(":focus").css("backgroundColor", "red");
+    });
+</script>
+</body>
+</html>

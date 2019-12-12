@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>今日团购模块 </title>
+    <script src="../../jquery-3.4.1.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-size: 12px;
+        }
+
+        #pruduce {
+            width: 947px;
+            background-color: #F2F2F2;
+        }
+
+        .top {
+            height: 55px;
+            background: url(images/top.jpg) no-repeat 10px 10px;
+        }
+
+        .main {
+            text-align: center;
+
+            height: 309px;
+
+
+        }
+
+        .box {
+            width: 300px;
+            height: 280px;
+            border: 1px solid #999;
+            margin: 0px 6px;
+            float: left;
+            cursor: pointer;
+        }
+
+        dl {
+            padding-top: 3px;
+
+        }
+
+        dd {
+            line-height: 30px;
+        }
+
+        div.btprice_1 {
+            height: 50px;
+            background: #FFF2CE url(images/bt1.jpg) no-repeat 5px 4px;
+        }
+
+        div.btprice_2 {
+            height: 50px;
+            background: #FFF2CE url(images/bt2.jpg) no-repeat 5px 4px;
+        }
+
+        div.btprice_3 {
+            height: 50px;
+            background: #FFF2CE url(images/bt3.jpg) no-repeat 5px 4px;
+        }
+
+        .hoverstyle {
+            background-color: #D51938;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<h1 style="font-size:30px">图一</h1>
+<hr>
+<br><br>
+<div id="pruduce">
+
+    <div class="top"></div>
+    <div class="main">
+        <div class="box">
+            <dl>
+                <dt><img src="images/pic1.jpg"/></dt>
+                <dd>[包邮]亮点可移动儿童防身高帖（每个ID限20）</dd>
+
+            </dl>
+            <div class="btprice_1"></div>
+        </div>
+        <div class="box">
+            <dl>
+                <dt><img src="images/pic2.jpg"/></dt>
+                <dd>[包邮]韩国泡温泉游泳衣价达玛分教保守纤瘦大胸泳装</dd>
+            </dl>
+            <div class="btprice_2"></div>
+        </div>
+        <div class="box">
+            <dl>
+                <dt><img src="images/pic3.jpg"/></dt>
+                <dd>[包邮]贵人鸟运动透气跑鞋P23423(每个限购5件)</dd>
+
+            </dl>
+            <div class="btprice_3"></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    /*
+    当鼠标移过商品信息时，添加如图一所示的样式，边框及背景颜色变为#D51938，说明文字变为白色，鼠标移出时，恢复初始状态
+
+
+
+    */
+
+    $(function () {
+        $(".box dl").hover(function () {
+            $(this).addClass("hoverstyle");
+        }, function () {
+            $(this).removeClass("hoverstyle");
+        });
+    });
+
+</script>
+</body>
+</html>

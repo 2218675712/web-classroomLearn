@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>制作YY安全中心登录框特效 </title>
+    <script src="../../jquery-3.4.1.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-size: 12px;
+        }
+
+        #login {
+            position: relative;
+            height: 282px;
+            width: 494px;
+            background: url(images/bg.jpg) no-repeat;
+        }
+
+        #login input.text {
+            position: absolute;
+            height: 26px;
+            line-height: 26px;
+            color: #999;
+            width: 207px;
+        }
+
+        .username {
+            left: 183px;
+            top: 105px;
+        }
+
+        .passwrd {
+            left: 183px;
+            top: 145px;
+        }
+
+        input.btn {
+            position: absolute;
+            left: 183px;
+            top: 190px;
+            height: 32px;
+            line-height: 32px;
+            width: 100px;
+            background: url(images/btn.jpg) no-repeat;
+            border: none;
+        }
+
+    </style>
+</head>
+<body>
+<div id="login">
+    <form>
+        <input type="text" name='username' class='text username' value="通行账号/邮箱"/>
+        <input type="text" name='passwrd' class='text passwrd' value="密码"/>
+        <input type="submit" name='sub' class='btn' value=" "/>
+    </form>
+</div>
+<script type="text/javascript">
+
+
+    /*使用光标定位以及光标离开事件完成
+    1.当光标点击账号文本框时，将文本框中的文字清空，
+    2.当光标离开文本框并且文本框中没有填写其他内容时，文本框中的文字还原
+    */
+
+
+    $(function () {
+        $("input").focus(function () {
+            $(this).val("");
+        });
+        $("input[name=username]").blur(function () {
+          if ($(this).val()==""){
+              $(this).val("通行账号/邮箱");
+          };
+        });
+        $("input[name=passwrd]").blur(function () {
+          if ($(this).val()==""){
+              $(this).val("密码");
+          };
+        });
+    })
+</script>
+</body>
+</html>

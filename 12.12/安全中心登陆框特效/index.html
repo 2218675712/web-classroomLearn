@@ -68,19 +68,20 @@
 
     $(function () {
         $("input").focus(function () {
-            $(this).val("");
+            if ($(this).val() === "通行账号/邮箱" || $(this).val() === "密码") {
+                $(this).val("");
+            }
         });
-        $("input[name=username]").blur(function () {
-          if ($(this).val()==""){
-              $(this).val("通行账号/邮箱");
-          };
+        $("input").blur(function () {
+            if ($(this).val() === "") {
+                if ($(this).prop("name") === "username") {
+                    $(this).val("通行账号/邮箱");
+                } else {
+                    $(this).val("密码");
+                }
+            }
         });
-        $("input[name=passwrd]").blur(function () {
-          if ($(this).val()==""){
-              $(this).val("密码");
-          };
-        });
-    })
+    });
 </script>
 </body>
 </html>

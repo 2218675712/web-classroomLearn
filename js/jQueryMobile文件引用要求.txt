@@ -1,0 +1,9 @@
+需要引用jQueryMobile样式文件
+1.引用“jquery.mobile-1.4.5.min.css”
+2.引用“jquery.mobile.theme-1.4.5.min.css”
+
+需要引用jQuery文件
+1.引用“jquery-1.11.3.min.js”版本必须低于2.0，否则jQueryMobile文件无法加载
+
+需要引用jQueryMobile-js文件
+1.引用“jquery.mobile-1.4.5.min.js”

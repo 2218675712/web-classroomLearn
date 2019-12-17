@@ -22,12 +22,45 @@
     * */
 </script>
 <body>
-<div data-role="page">
+
+<div id="page1" data-role="page">
     <div data-role="header">
         我是header
     </div>
     <div data-role="content">
-        我是content
+        我是content上一页
+        <br>
+        <a href="#page2" data-transition="pop">点我进入下一页</a>
+        <br>
+        <a href="#page3" data-rel="dialog">点我进入对话框</a>
+    </div>
+    <div data-role="footer">
+        我是footer
+    </div>
+</div>
+<div id="page2" data-role="page">
+    <div data-role="header">
+        我是header
+    </div>
+    <div data-role="content">
+        我是content下一页
+        <br>
+        <a href="#page1" data-transition="flip">点我进入上一页</a>
+        <br>
+        <a href="" data-rel="back">点我返回</a>
+    </div>
+    <div data-role="footer">
+        我是footer
+    </div>
+</div>
+<div id="page3" data-role="page">
+    <div data-role="header">
+        我是header
+    </div>
+    <div data-role="content">
+        不想打字<br>
+        不想打字<br>
+        不想打字<br>
     </div>
     <div data-role="footer">
         我是footer
